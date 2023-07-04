@@ -21,6 +21,10 @@ services:
     image: mock-service-image
     ports:
       - "8090:8090"
+    environment:
+      - EUREKA_URI=http://discovery:2001/eureka
+      - JWT_URI=http://keycloak:8080/realms/teste_realm/protocol/openid-connect/certs
+      - JWT_ISSUER_URI=http://keycloak:8080/auth/realms/teste_realm
     networks:
       - keycloak_network
   db:

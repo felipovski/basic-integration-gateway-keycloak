@@ -7,11 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
 public class MockServiceController {
 
     @GetMapping
     public String helloWorld() {
         return "Hello World!";
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "Test!";
     }
 }
